@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Code Quiz</title>
+</head>
+<body>
+    <header>
+        <section id = "referee" style="display: none">
+            <input type="button" value="View High Scores" id="leaderview"></br>
+            Score: <var id="score"> </var>
+        </section>
+        <section id= "countdownTimer" style="display: none">
+            Time Left: <span id="timer"></span>
+        </section>
+    </header>
+    <container>
+        <div id="mainContainer" class="none">
+            <h1>Welcome to the Code Quiz!</h1>
+            <p>Test your knowledge with these coding questions.</p> 
+            <p>For each incorrect answer, you will be penalized 10 seconds.</p>
+            <p>If the timer hits 0, it's game over!</p>
+            <br>
+            <button id="startBtn">Start Quiz</button>
+        </div>
+    </container>
+        <div id="testContainer" style="display: none">
+            <h2 id="questionEl"></h2>
+                <ul>
+                    <div id="answers">
+                        <button id="answerA"></button>
+                    </div>
+                    <div>
+                        <button id="answerB"></button>
+                    </div>
+                    <div>
+                        <button id="answerC"></button>
+                    </div>
+                    <div>
+                        <button id="answerD"></button>
+                    </div>
+                </ul>
+            </div>
+</body>
+<section id="UserAnswer"></section>
+<div id= "game_over" style="display: none">
+    <h2> Game Over</h2>
+    Your Score was: <var id="final_score"> </var>
+    </br>
+    Initials: <input type="text"  value="initials" id="initials">
+    </br>
+    <input type="button" value="submit" id="submit">
+</div>
+<div id="leaderboard_page" style="display: none" >
+    <h2> Leaderboard </h2>
+    <div id="leaderboard"></div>
+        <input type="button" value="Go Back" id="go_back">
+        <input type="button" id="clear_board" value ="Clear">
+    </div>
+
+    <script src="./assets/script.js"></script>
+</html> 
