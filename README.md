@@ -17,4 +17,4 @@ A screenshot of the application when opened in Google Chrome can be seen below:
 This screenshot is as of 1/9/2023 at 11PM CST, will add updated screenshot(s) once adjustments have been made by way of office hours and tutoring.
 
 A link to the deployed application can be found below:
-(Link not yet applied here, need to commit my code to GitHub and create a Page)
+https://jmabie94.github.io/1-9-22-webAPI-code-quiz/
