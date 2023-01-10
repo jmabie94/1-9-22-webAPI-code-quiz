@@ -1,0 +1,64 @@
+* {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    max-width: 100%;
+    background-color: white;
+}
+
+header {
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+}
+
+body {
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+}
+
+#leaderview {
+    color: black;
+}
+
+#leaderview:hover {
+    background-color: black;
+    color: white;
+}
+
+#timer {
+    /* float: right; */
+    /* eradicates spacing to the right of "Time Left:" */
+    color: black;
+}
+
+#timer:hover {
+    background-color: black;
+    color: white;
+}
+
+/* #testContainer & #answers IDs intended to center the answer buttons, not working*/
+/* #testContainer does seem to be centering the UserAnswer responses so kept in */
+#testContainer {
+    justify-content: center;
+    align-items: center;
+}
+
+/* #answers {
+    justify-content: center;
+    align-items: center;
+} */
+
+button {
+    background-color: purple;
+    color: white;
+    width: auto;
+    border-radius: 20px;
+    height: 50px;
+    font-size: larger;
+}
+
+.container {
+    text-align: center;
+    font-size: 60px;
+    margin-top: 0px;
+}
