@@ -43,10 +43,34 @@ body {
     align-items: center;
 }
 
+/* got help in office hours to identify some of the styling problems */
+#leaderboard {
+    justify-content: center;
+    text-align: center;
+    list-style-position: inside;
+}
+
+/* got help in office hours to identify some of the styling problems */
+#leaderboard ol li {
+    text-align: left;
+    margin-left: 45%;
+}
+
 /* #answers {
     justify-content: center;
     align-items: center;
 } */
+
+/* added custom ol styling so that user agent stylesheet padding would stop messing up styling problems */
+ol {
+    display: block;
+    list-style-type: decimal;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline: 40px;
+}
 
 button {
     background-color: purple;

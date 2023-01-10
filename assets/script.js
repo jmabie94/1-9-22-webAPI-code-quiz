@@ -105,7 +105,7 @@ answerA.addEventListener("click", function(event){
     if (0 === correctAnswer) {
         document.getElementById("UserAnswer").innerHTML = "That's right! Well done.";
         setTimeout(function() {
-            document.getElementById("UserResponse").innerHTML = "";
+            document.getElementById("UserAnswer").innerHTML = "";
         },
         1000
         );
@@ -139,7 +139,7 @@ answerB.addEventListener("click", function(event){
     if (1 === correctAnswer) {
         document.getElementById("UserAnswer").innerHTML = "That's right! Well done.";
         setTimeout(function() {
-            document.getElementById("UserResponse").innerHTML = "";
+            document.getElementById("UserAnswer").innerHTML = "";
         },
         1000
         );
@@ -173,7 +173,7 @@ answerC.addEventListener("click", function(event){
     if (2 === correctAnswer) {
         document.getElementById("UserAnswer").innerHTML = "That's right! Well done.";
         setTimeout(function() {
-            document.getElementById("UserResponse").innerHTML = "";
+            document.getElementById("UserAnswer").innerHTML = "";
         },
         1000
         );
@@ -207,7 +207,7 @@ answerD.addEventListener("click", function(event){
     if (3 === correctAnswer) {
         document.getElementById("UserAnswer").innerHTML = "That's right! Well done.";
         setTimeout(function() {
-            document.getElementById("UserResponse").innerHTML = "";
+            document.getElementById("UserAnswer").innerHTML = "";
         },
         1000
         );
@@ -248,18 +248,31 @@ function end_quiz(){
 
 submitBtn.addEventListener("click", function() {
     leaderboard.push(document.getElementById("initials").value + " " + score);
+    /* got help in office hours to create a sorting function to properly RANK submissions to the leaderboard */
+    leaderboard.sort(function(a,b) {
+        /* var firstscore = a.split(" ")[a.length-1] */
+        var firstscoreWords = a.split(" ");
+        var firstscore = firstscoreWords[firstscoreWords.length-1]
+        /* var secondscore = b.split(" ")[b.length-1] */
+        var secondscoreWords = b.split(" ");
+        var secondscore = secondscoreWords[secondscoreWords.length-1]
+        return firstscore < secondscore ? 1 : -1
+    })
     document.getElementById("mainContainer").setAttribute("style", "display:none")
     document.getElementById("testContainer").setAttribute("style", "display:none");
     document.getElementById("game_over").setAttribute("style", "display:none");
     document.getElementById("leaderboard_page").setAttribute("style", "display:block");
 
     output = "";
+    /* got help in office hours to create LIST ITEMS for every submission to the leaderboard */
     for(let j=0; j<leaderboard.length; j++){
-        output = output + " " + leaderboard[j];
+        output = output + "<li> " + leaderboard[j] + "</li>\n";
     }
     document.getElementById("leaderboard").innerHTML = output;
     mrClean();
 });
+
+// use JS .sort function with splits & comparison functions so that the high scores are ranked
 
 // Creating Leaderboard View Button as Event Listener (WORKS!)
 
@@ -272,8 +285,9 @@ leaderBtn.addEventListener("click", function() {
     countdownTimer.setAttribute("style", "display:none");
 
     output = "";
+    /* updated with LIST ITEM specification from submitBtn in order to keep consistent ordered/ranked leaderboard */
     for(let j=0; j<leaderboard.length; j++){
-        output = output + " " + leaderboard[j];
+        output = output + "<li> " + leaderboard[j] + "</li>\n";
     }
     document.getElementById("leaderboard").innerHTML = output;
     mrClean();
@@ -293,7 +307,8 @@ retryBtn.addEventListener("click", function() {
 // (Not actually clearing Leaderboard, cleared entries reappear on revisit)
 
 clearBtn.addEventListener("click", function() {
-    document.getElementById("leaderboard").innerHTML = [];
+    document.getElementById("leaderboard").innerHTML = "";
+    leaderboard = [];
     mrClean();
 });
 

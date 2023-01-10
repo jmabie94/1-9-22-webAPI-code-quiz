@@ -29,7 +29,7 @@
     </container>
         <div id="testContainer" style="display: none">
             <h2 id="questionEl"></h2>
-                <ul>
+            <!-- removed erroneous UL to fix styling problem -->
                     <div id="answers">
                         <button id="answerA"></button>
                     </div>
@@ -42,8 +42,7 @@
                     <div>
                         <button id="answerD"></button>
                     </div>
-                </ul>
-            </div>
+        </div>
 </body>
 <section id="UserAnswer"></section>
 <div id= "game_over" style="display: none">
@@ -56,7 +55,9 @@
 </div>
 <div id="leaderboard_page" style="display: none" >
     <h2> Leaderboard </h2>
-    <div id="leaderboard"></div>
+    <div>
+        <ol id="leaderboard"></ol>
+    </div>
         <input type="button" value="Go Back" id="go_back">
         <input type="button" id="clear_board" value ="Clear">
     </div>
